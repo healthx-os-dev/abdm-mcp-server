@@ -1,0 +1,29 @@
+{
+  "name": "abdm-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Production MCP server for ABDM APIs. Clients use hx_ API keys — ABDM secrets stay server-side.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "http": "TRANSPORT=http node src/index.js",
+    "gen-admin-key": "node -e \"import('crypto').then(c => console.log('ADMIN_API_KEY=' + c.randomBytes(32).toString('hex')))\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "express-rate-limit": "^7.0.0",
+    "jose": "^5.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "rate-limiter-flexible": "^5.0.0",
+    "uuid": "^9.0.0",
+    "zod": "^3.22.0"
+  },
+  "keywords": ["abdm", "mcp", "health", "fhir", "abha", "india"],
+  "author": "HealthX OS Dev",
+  "license": "BSL-1.0"
+}
